@@ -10,7 +10,11 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    // Time of last frame
+    var lastFrameTime : TimeInterval = 0
     
+    // Time since last frame
+    var deltaTime : TimeInterval = 0
     
     var player: SKSpriteNode = SKSpriteNode(imageNamed: "PlayerSprite")
     
@@ -18,12 +22,15 @@ class GameScene: SKScene {
     
     var road: SKSpriteNode = SKSpriteNode(imageNamed: "road")
     
+    var roads: [SKSpriteNode] = []
+    
     override init(size: CGSize) {
         super.init(size: size)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        
     }
     
     override func didMove(to view: SKView) {
@@ -31,6 +38,18 @@ class GameScene: SKScene {
         initPlayer()
         initOpponent()
         
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        if lastFrameTime <= 0 {
+            lastFrameTime = currentTime
+        }
+        
+        deltaTime = currentTime - lastFrameTime
+        
+        lastFrameTime = currentTime
+        
+        self.moveRoad(sprites: roads, speed: 250)
     }
     
     func initPlayer(){
@@ -74,47 +93,52 @@ class GameScene: SKScene {
         addChild(opponent)
     }
     
-    func initRoad(){
+    func initRoad() {
         let startFirstY = road.size.height/2
-        let startSecondY = road.size.height/2 - 200
-        let endY = -road.size.height/2 + UIScreen.main.bounds.height
+//        let startSecondY = road.size.height/2 - 200
+        
         
         road.size = CGSize(width: UIScreen.main.bounds.width, height: road.size.height)
-//        Awal
-                road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: startFirstY)
+////        Awal
+        road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: 0)
         
+        roads.append(road.copy() as! SKSpriteNode)
+        
+        road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: road.size.height)
+        
+        roads.append(road.copy() as! SKSpriteNode)
 //        Tujuan
 //        road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: -road.size.height/2 + UIScreen.main.bounds.height)
         
 
-        let moveDown = SKAction.moveTo(y: endY, duration: 4 )
-        let reset = SKAction.moveTo(y: startSecondY, duration: 0 )
-        let sequence = SKAction.sequence([moveDown, reset])
-        let repeatForever = SKAction.repeatForever(sequence)
-        road.run(repeatForever)
-        addChild(road)
-        
+//        let moveDown = SKAction.moveTo(y: endY, duration: 4 )
+//        let reset = SKAction.moveTo(y: startSecondY, duration: 0 )
+//        let sequence = SKAction.sequence([moveDown, reset])
+//        let repeatForever = SKAction.repeatForever(sequence)
+//        road.run(repeatForever)
+        addChild(roads[0])
+        addChild(roads[1])
     }
     
-    func moveSprites(sprite : SKSpriteNode, speed : Float) -> Void {
-            var newPosition = CGPointZero
+    func moveRoad(sprites : [SKSpriteNode], speed : Float) -> Void {
+        var newPosition = CGPointZero
+        
+        for spriteToMove in sprites {
             
-          
+            newPosition = spriteToMove.position
+            newPosition.y -= CGFloat(speed * Float(deltaTime))
+            spriteToMove.position = newPosition
+            
+            if spriteToMove.frame.maxY < self.frame.minY {
                 
-                newPosition = sprite.position
-                newPosition.x -= CGFloat(speed * 1)
-                sprite.position = newPosition
-                
-                if sprite.frame.maxX < self.frame.minX {
-                    
-                    sprite.position =
-                    CGPoint(x: sprite.position.x +
-                            sprite.size.width * 3,
-                            y: sprite.position.y)
-                }
-                
+                spriteToMove.position =
+                CGPoint(x: spriteToMove.position.x,
+                        y: spriteToMove.position.y +
+                        spriteToMove.size.height * 2)
+            }
             
         }
+    }
      
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
