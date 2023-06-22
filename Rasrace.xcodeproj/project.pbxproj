@@ -14,6 +14,8 @@
 		A60EF5F32A44297F006F1369 /* RasraceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5F22A44297F006F1369 /* RasraceTests.swift */; };
 		A60EF5FD2A44297F006F1369 /* RasraceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5FC2A44297F006F1369 /* RasraceUITests.swift */; };
 		A60EF5FF2A44297F006F1369 /* RasraceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */; };
+		A60EF60D2A442DCC006F1369 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF60C2A442DCC006F1369 /* GameScene.swift */; };
+		A60EF60F2A442F75006F1369 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF60E2A442F75006F1369 /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		A60EF5F82A44297F006F1369 /* RasraceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasraceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60EF5FC2A44297F006F1369 /* RasraceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceUITests.swift; sourceTree = "<group>"; };
 		A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A60EF60C2A442DCC006F1369 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A60EF60E2A442F75006F1369 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				A60EF5E12A44297E006F1369 /* RasraceApp.swift */,
 				A60EF5E32A44297E006F1369 /* ContentView.swift */,
+				A60EF60B2A442D9F006F1369 /* Game */,
 				A60EF5E52A44297F006F1369 /* Assets.xcassets */,
 				A60EF5E72A44297F006F1369 /* Preview Content */,
 			);
@@ -125,6 +130,23 @@
 				A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */,
 			);
 			path = RasraceUITests;
+			sourceTree = "<group>";
+		};
+		A60EF60B2A442D9F006F1369 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF6102A442F7A006F1369 /* Node */,
+				A60EF60C2A442DCC006F1369 /* GameScene.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		A60EF6102A442F7A006F1369 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF60E2A442F75006F1369 /* PlayerNode.swift */,
+			);
+			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60EF60D2A442DCC006F1369 /* GameScene.swift in Sources */,
 				A60EF5E42A44297E006F1369 /* ContentView.swift in Sources */,
+				A60EF60F2A442F75006F1369 /* PlayerNode.swift in Sources */,
 				A60EF5E22A44297E006F1369 /* RasraceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
