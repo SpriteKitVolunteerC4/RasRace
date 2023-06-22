@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A60EF5E22A44297E006F1369 /* RasraceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5E12A44297E006F1369 /* RasraceApp.swift */; };
+		A60EF5E42A44297E006F1369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5E32A44297E006F1369 /* ContentView.swift */; };
+		A60EF5E62A44297F006F1369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60EF5E52A44297F006F1369 /* Assets.xcassets */; };
+		A60EF5E92A44297F006F1369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60EF5E82A44297F006F1369 /* Preview Assets.xcassets */; };
+		A60EF5F32A44297F006F1369 /* RasraceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5F22A44297F006F1369 /* RasraceTests.swift */; };
+		A60EF5FD2A44297F006F1369 /* RasraceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5FC2A44297F006F1369 /* RasraceUITests.swift */; };
+		A60EF5FF2A44297F006F1369 /* RasraceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A60EF5EF2A44297F006F1369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A60EF5D62A44297E006F1369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A60EF5DD2A44297E006F1369;
+			remoteInfo = Rasrace;
+		};
+		A60EF5F92A44297F006F1369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A60EF5D62A44297E006F1369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A60EF5DD2A44297E006F1369;
+			remoteInfo = Rasrace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A60EF5DE2A44297E006F1369 /* Rasrace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rasrace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60EF5E12A44297E006F1369 /* RasraceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceApp.swift; sourceTree = "<group>"; };
+		A60EF5E32A44297E006F1369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A60EF5E52A44297F006F1369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A60EF5E82A44297F006F1369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A60EF5EE2A44297F006F1369 /* RasraceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasraceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60EF5F22A44297F006F1369 /* RasraceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceTests.swift; sourceTree = "<group>"; };
+		A60EF5F82A44297F006F1369 /* RasraceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasraceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60EF5FC2A44297F006F1369 /* RasraceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceUITests.swift; sourceTree = "<group>"; };
+		A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A60EF5DB2A44297E006F1369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5EB2A44297F006F1369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5F52A44297F006F1369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A60EF5D52A44297E006F1369 = {
+			isa = PBXGroup;
+			children = (
+				A60EF5E02A44297E006F1369 /* Rasrace */,
+				A60EF5F12A44297F006F1369 /* RasraceTests */,
+				A60EF5FB2A44297F006F1369 /* RasraceUITests */,
+				A60EF5DF2A44297E006F1369 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A60EF5DF2A44297E006F1369 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF5DE2A44297E006F1369 /* Rasrace.app */,
+				A60EF5EE2A44297F006F1369 /* RasraceTests.xctest */,
+				A60EF5F82A44297F006F1369 /* RasraceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A60EF5E02A44297E006F1369 /* Rasrace */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF5E12A44297E006F1369 /* RasraceApp.swift */,
+				A60EF5E32A44297E006F1369 /* ContentView.swift */,
+				A60EF5E52A44297F006F1369 /* Assets.xcassets */,
+				A60EF5E72A44297F006F1369 /* Preview Content */,
+			);
+			path = Rasrace;
+			sourceTree = "<group>";
+		};
+		A60EF5E72A44297F006F1369 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF5E82A44297F006F1369 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A60EF5F12A44297F006F1369 /* RasraceTests */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF5F22A44297F006F1369 /* RasraceTests.swift */,
+			);
+			path = RasraceTests;
+			sourceTree = "<group>";
+		};
+		A60EF5FB2A44297F006F1369 /* RasraceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A60EF5FC2A44297F006F1369 /* RasraceUITests.swift */,
+				A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */,
+			);
+			path = RasraceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60EF5DD2A44297E006F1369 /* Rasrace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60EF6022A44297F006F1369 /* Build configuration list for PBXNativeTarget "Rasrace" */;
+			buildPhases = (
+				A60EF5DA2A44297E006F1369 /* Sources */,
+				A60EF5DB2A44297E006F1369 /* Frameworks */,
+				A60EF5DC2A44297E006F1369 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rasrace;
+			productName = Rasrace;
+			productReference = A60EF5DE2A44297E006F1369 /* Rasrace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A60EF5ED2A44297F006F1369 /* RasraceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60EF6052A44297F006F1369 /* Build configuration list for PBXNativeTarget "RasraceTests" */;
+			buildPhases = (
+				A60EF5EA2A44297F006F1369 /* Sources */,
+				A60EF5EB2A44297F006F1369 /* Frameworks */,
+				A60EF5EC2A44297F006F1369 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A60EF5F02A44297F006F1369 /* PBXTargetDependency */,
+			);
+			name = RasraceTests;
+			productName = RasraceTests;
+			productReference = A60EF5EE2A44297F006F1369 /* RasraceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A60EF5F72A44297F006F1369 /* RasraceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60EF6082A44297F006F1369 /* Build configuration list for PBXNativeTarget "RasraceUITests" */;
+			buildPhases = (
+				A60EF5F42A44297F006F1369 /* Sources */,
+				A60EF5F52A44297F006F1369 /* Frameworks */,
+				A60EF5F62A44297F006F1369 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A60EF5FA2A44297F006F1369 /* PBXTargetDependency */,
+			);
+			name = RasraceUITests;
+			productName = RasraceUITests;
+			productReference = A60EF5F82A44297F006F1369 /* RasraceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A60EF5D62A44297E006F1369 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A60EF5DD2A44297E006F1369 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					A60EF5ED2A44297F006F1369 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = A60EF5DD2A44297E006F1369;
+					};
+					A60EF5F72A44297F006F1369 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = A60EF5DD2A44297E006F1369;
+					};
+				};
+			};
+			buildConfigurationList = A60EF5D92A44297E006F1369 /* Build configuration list for PBXProject "Rasrace" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A60EF5D52A44297E006F1369;
+			productRefGroup = A60EF5DF2A44297E006F1369 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60EF5DD2A44297E006F1369 /* Rasrace */,
+				A60EF5ED2A44297F006F1369 /* RasraceTests */,
+				A60EF5F72A44297F006F1369 /* RasraceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A60EF5DC2A44297E006F1369 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A60EF5E92A44297F006F1369 /* Preview Assets.xcassets in Resources */,
+				A60EF5E62A44297F006F1369 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5EC2A44297F006F1369 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5F62A44297F006F1369 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A60EF5DA2A44297E006F1369 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A60EF5E42A44297E006F1369 /* ContentView.swift in Sources */,
+				A60EF5E22A44297E006F1369 /* RasraceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5EA2A44297F006F1369 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A60EF5F32A44297F006F1369 /* RasraceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A60EF5F42A44297F006F1369 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A60EF5FF2A44297F006F1369 /* RasraceUITestsLaunchTests.swift in Sources */,
+				A60EF5FD2A44297F006F1369 /* RasraceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A60EF5F02A44297F006F1369 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A60EF5DD2A44297E006F1369 /* Rasrace */;
+			targetProxy = A60EF5EF2A44297F006F1369 /* PBXContainerItemProxy */;
+		};
+		A60EF5FA2A44297F006F1369 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A60EF5DD2A44297E006F1369 /* Rasrace */;
+			targetProxy = A60EF5F92A44297F006F1369 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A60EF6002A44297F006F1369 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A60EF6012A44297F006F1369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A60EF6032A44297F006F1369 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rasrace/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.Rasrace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A60EF6042A44297F006F1369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rasrace/Preview Content\"";
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.Rasrace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A60EF6062A44297F006F1369 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.RasraceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rasrace.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rasrace";
+			};
+			name = Debug;
+		};
+		A60EF6072A44297F006F1369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.RasraceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rasrace.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rasrace";
+			};
+			name = Release;
+		};
+		A60EF6092A44297F006F1369 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.RasraceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rasrace;
+			};
+			name = Debug;
+		};
+		A60EF60A2A44297F006F1369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LSQ3C9W8U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrezkys.RasraceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rasrace;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60EF5D92A44297E006F1369 /* Build configuration list for PBXProject "Rasrace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A60EF6002A44297F006F1369 /* Debug */,
+				A60EF6012A44297F006F1369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60EF6022A44297F006F1369 /* Build configuration list for PBXNativeTarget "Rasrace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A60EF6032A44297F006F1369 /* Debug */,
+				A60EF6042A44297F006F1369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60EF6052A44297F006F1369 /* Build configuration list for PBXNativeTarget "RasraceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A60EF6062A44297F006F1369 /* Debug */,
+				A60EF6072A44297F006F1369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60EF6082A44297F006F1369 /* Build configuration list for PBXNativeTarget "RasraceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A60EF6092A44297F006F1369 /* Debug */,
+				A60EF60A2A44297F006F1369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A60EF5D62A44297E006F1369 /* Project object */;
+}
