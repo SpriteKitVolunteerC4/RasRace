@@ -6,38 +6,55 @@
 //
 
 import SpriteKit
+import SwiftUI
 
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
+    @Published  var isGameOver: Bool = false
     
+    var time: Timer?
     // Time of last frame
     var lastFrameTime : TimeInterval = 0
-    
     // Time since last frame
     var deltaTime : TimeInterval = 0
-    
     var player: SKSpriteNode = SKSpriteNode(imageNamed: "PlayerSprite")
-    
     var opponent: SKSpriteNode = SKSpriteNode(imageNamed: "Car1Sprite")
-    
+    var opponents: [SKSpriteNode] = []
     var road: SKSpriteNode = SKSpriteNode(imageNamed: "road")
-    
     var roads: [SKSpriteNode] = []
-    
-    override init(size: CGSize) {
-        super.init(size: size)
-    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
         
     }
     
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
     override func didMove(to view: SKView) {
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        player = SKSpriteNode(imageNamed: "PlayerSprite")
+        opponent = SKSpriteNode(imageNamed: "Car1Sprite")
+        opponents = []
+        
         initRoad()
         initPlayer()
         initOpponent()
         
+        time = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        player.physicsBody?.categoryBitMask = 1
+        player.physicsBody?.contactTestBitMask = 2
+        player.physicsBody?.collisionBitMask = 0
+        
+        opponent.physicsBody = SKPhysicsBody(rectangleOf: opponent.size)
+        opponent.physicsBody?.categoryBitMask = 2
+        opponent.physicsBody?.contactTestBitMask = 1
+        opponent.physicsBody?.collisionBitMask = 0
+
+        physicsWorld.contactDelegate = self
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -52,12 +69,45 @@ class GameScene: SKScene {
         self.moveRoad(sprites: roads, speed: 250)
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !isPaused {
+            for touch in touches {
+                let location = touch.location(in: self)
+                let screenWidth = UIScreen.main.bounds.width
+                let sectionWidth = screenWidth / 3
+                
+                player.position.y = location.y
+                
+                if location.x <= sectionWidth {
+                    // Move to the left section
+                    player.position.x = sectionWidth / 2
+                } else if location.x <= sectionWidth * 2 {
+                    // Move to the middle section
+                    player.position.x = screenWidth / 2
+                } else {
+                    // Move to the right section
+                    player.position.x = screenWidth - (sectionWidth / 2)
+                }
+            }
+        }
+    }
+    
+    func restart() {
+        isGameOver = false
+        isPaused = false
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        isGameOver = true
+        isPaused = true
+    }
+    
     func initPlayer(){
         player.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: 100)
         addChild(player)
     }
     
-    func generateOpponentPosition() -> CGPoint {
+    func generateOpponentPosition(i: Int = 1) -> CGPoint {
         let sectionWidth = UIScreen.main.bounds.width / 3
         
         // Choose a random section for the opponent
@@ -79,12 +129,12 @@ class GameScene: SKScene {
             // Default to middle section if something unexpected happens
             opponentXPosition = UIScreen.main.bounds.width / 2
         }
-        return CGPoint(x: opponentXPosition, y: UIScreen.main.bounds.height - 100)
+        return CGPoint(x: opponentXPosition, y: UIScreen.main.bounds.height + CGFloat(Int.random(in: 50..<(100 * i + 1))))
     }
     
-    func initOpponent() {
+    func initOpponent(range: Int = 1) {
         opponent.position = generateOpponentPosition()
-        // sequence
+        // sequencelet timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         let moveDown = SKAction.moveTo(y: 0, duration: 10)
         let remove = SKAction.removeFromParent()
         let sequence = SKAction.sequence([moveDown, remove])
@@ -139,28 +189,28 @@ class GameScene: SKScene {
             
         }
     }
-     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            let screenWidth = UIScreen.main.bounds.width
-            let sectionWidth = screenWidth / 3
-            
-            player.position.y = location.y
-            
-            if location.x <= sectionWidth {
-                // Move to the left section
-                player.position.x = sectionWidth / 2
-            } else if location.x <= sectionWidth * 2 {
-                // Move to the middle section
-                player.position.x = screenWidth / 2
-            } else {
-                // Move to the right section
-                player.position.x = screenWidth - (sectionWidth / 2)
-            }
-        }
+    
+    func generateCars() {
+        var cars: [String] = ["Car1Sprite", "Car2Sprite", "Car3Sprite"]
+        
+        var enemy: SKSpriteNode = SKSpriteNode(imageNamed: cars[Int.random(in: 0..<(cars.count - 1))])
+        
+        enemy.position = generateOpponentPosition()
+        // sequence
+        let moveDown = SKAction.moveTo(y: 0, duration: 10)
+        let remove = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([moveDown, remove])
+        enemy.run(sequence)
+        opponents.append(enemy)
+        
+        enemy.physicsBody = SKPhysicsBody(rectangleOf: opponent.size)
+        enemy.physicsBody?.categoryBitMask = 2
+        enemy.physicsBody?.contactTestBitMask = 1
+        enemy.physicsBody?.collisionBitMask = 0
+        addChild(enemy)
     }
     
-    
-    
+    @objc func timerFired() {
+        generateCars()
+    }
 }
