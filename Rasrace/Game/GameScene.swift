@@ -10,7 +10,8 @@ import SwiftUI
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
-    @Published  var isGameOver: Bool = false
+    @Published var isGameOver: Bool = false
+    @Published var score: Int = 0
     
     var time: Timer?
     // Time of last frame
@@ -95,6 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     func restart() {
         isGameOver = false
         isPaused = false
+        score = 0
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -132,12 +134,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         return CGPoint(x: opponentXPosition, y: UIScreen.main.bounds.height + CGFloat(Int.random(in: 50..<(100 * i + 1))))
     }
     
-    func initOpponent(range: Int = 1) {
+    func initOpponent() {
         opponent.position = generateOpponentPosition()
         // sequencelet timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         let moveDown = SKAction.moveTo(y: 0, duration: 10)
         let remove = SKAction.removeFromParent()
-        let sequence = SKAction.sequence([moveDown, remove])
+        
+        let checkPosition = SKAction.run {
+            if self.opponent.position.y <= 0 {
+                self.score += 1
+            }
+        }
+        
+        let sequence = SKAction.sequence([moveDown, checkPosition, remove])
         opponent.run(sequence)
         
         addChild(opponent)
@@ -199,7 +208,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         // sequence
         let moveDown = SKAction.moveTo(y: 0, duration: 10)
         let remove = SKAction.removeFromParent()
-        let sequence = SKAction.sequence([moveDown, remove])
+        let checkPosition = SKAction.run {
+            if enemy.position.y <= 0 {
+                self.score += 1
+            }
+        }
+        let sequence = SKAction.sequence([moveDown, checkPosition, remove])
         enemy.run(sequence)
         opponents.append(enemy)
         

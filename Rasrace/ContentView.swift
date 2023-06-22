@@ -13,6 +13,21 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            if !gameScene.isGameOver {
+                HStack {
+                    Text("Score: ")
+                    Text("\(gameScene.score)")
+                }
+                .frame(width: 100, height: 50)
+                .background(
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                )
+                .zIndex(1)
+                .position(x: 75, y: 100)
+            }
+            
             if gameScene.isGameOver {
                 VStack {
                     Text("Game Over")
