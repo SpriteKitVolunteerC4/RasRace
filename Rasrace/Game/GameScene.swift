@@ -76,19 +76,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
                 let location = touch.location(in: self)
                 let screenWidth = UIScreen.main.bounds.width
                 let sectionWidth = screenWidth / 3
-                
+                var positionX = screenWidth / 2
                 player.position.y = location.y
                 
                 if location.x <= sectionWidth {
                     // Move to the left section
-                    player.position.x = sectionWidth / 2
+                    positionX = sectionWidth / 2
                 } else if location.x <= sectionWidth * 2 {
                     // Move to the middle section
-                    player.position.x = screenWidth / 2
+                    positionX = screenWidth / 2
                 } else {
                     // Move to the right section
-                    player.position.x = screenWidth - (sectionWidth / 2)
+                    positionX = screenWidth - (sectionWidth / 2)
                 }
+                
+                let move = SKAction.moveTo(x: positionX, duration: 0.1)
+                
+                let sequence = SKAction.sequence([move])
+                player.run(sequence)
             }
         }
     }
