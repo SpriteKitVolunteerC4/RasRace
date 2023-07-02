@@ -105,8 +105,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        isGameOver = true
-        isPaused = true
+        print(contact.bodyA)
+        print(contact.bodyB)
+//        isGameOver = true
+//        isPaused = true
     }
     
     func initPlayer(){
