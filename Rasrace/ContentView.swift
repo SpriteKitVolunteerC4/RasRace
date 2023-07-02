@@ -16,10 +16,7 @@ struct ContentView: View {
             PlayView(
                 gameScene: gameScene
             )
-        }
-    
-        
-        
+        }  
     }
 }
 
