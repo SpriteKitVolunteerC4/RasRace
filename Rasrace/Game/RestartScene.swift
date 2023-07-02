@@ -14,6 +14,7 @@ class RestartScene: SKScene {
             let location = touch.location(in: self)
             let node = self.atPoint(location)
             if (node.name == "restart-button") {
+                
                 goToGameScene()
             }
         }

@@ -44,6 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         let scene = SKScene(fileNamed: "RestartScene.sks")
         scene!.scaleMode = SKSceneScaleMode.aspectFill
         self.view?.presentScene(scene)
+        self.score = 0
     }
     
     override func didMove(to view: SKView) {
@@ -202,6 +203,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         let checkPosition = SKAction.run {
             if enemy.position.y <= 0 {
                 self.score += 1
+                
+                print("ree")
             }
         }
         let sequence = SKAction.sequence([moveDown, checkPosition, remove])
