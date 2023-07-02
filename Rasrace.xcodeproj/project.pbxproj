@@ -16,6 +16,10 @@
 		A60EF5FF2A44297F006F1369 /* RasraceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */; };
 		A60EF60D2A442DCC006F1369 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF60C2A442DCC006F1369 /* GameScene.swift */; };
 		A60EF60F2A442F75006F1369 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60EF60E2A442F75006F1369 /* PlayerNode.swift */; };
+		A68395B92A4DF6CC00C376E7 /* RestartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68395B82A4DF6CC00C376E7 /* RestartScene.swift */; };
+		A6EB61F82A4DE82B00502AB7 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB61F72A4DE82B00502AB7 /* PlayView.swift */; };
+		A6EB61FA2A4DE94700502AB7 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB61F92A4DE94700502AB7 /* GameOverView.swift */; };
+		A6EB61FC2A4DEE4100502AB7 /* RestartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A6EB61FB2A4DEE4100502AB7 /* RestartScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		A60EF5FE2A44297F006F1369 /* RasraceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasraceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A60EF60C2A442DCC006F1369 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		A60EF60E2A442F75006F1369 /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		A68395B82A4DF6CC00C376E7 /* RestartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartScene.swift; sourceTree = "<group>"; };
+		A6EB61F72A4DE82B00502AB7 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		A6EB61F92A4DE94700502AB7 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		A6EB61FB2A4DEE4100502AB7 /* RestartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RestartScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 				A60EF60B2A442D9F006F1369 /* Game */,
 				A60EF5E52A44297F006F1369 /* Assets.xcassets */,
 				A60EF5E72A44297F006F1369 /* Preview Content */,
+				A6EB61F72A4DE82B00502AB7 /* PlayView.swift */,
+				A6EB61F92A4DE94700502AB7 /* GameOverView.swift */,
+				A6EB61FB2A4DEE4100502AB7 /* RestartScene.sks */,
 			);
 			path = Rasrace;
 			sourceTree = "<group>";
@@ -137,6 +148,7 @@
 			children = (
 				A60EF6102A442F7A006F1369 /* Node */,
 				A60EF60C2A442DCC006F1369 /* GameScene.swift */,
+				A68395B82A4DF6CC00C376E7 /* RestartScene.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -254,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60EF5E92A44297F006F1369 /* Preview Assets.xcassets in Resources */,
+				A6EB61FC2A4DEE4100502AB7 /* RestartScene.sks in Resources */,
 				A60EF5E62A44297F006F1369 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,9 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68395B92A4DF6CC00C376E7 /* RestartScene.swift in Sources */,
 				A60EF60D2A442DCC006F1369 /* GameScene.swift in Sources */,
 				A60EF5E42A44297E006F1369 /* ContentView.swift in Sources */,
 				A60EF60F2A442F75006F1369 /* PlayerNode.swift in Sources */,
+				A6EB61F82A4DE82B00502AB7 /* PlayView.swift in Sources */,
+				A6EB61FA2A4DE94700502AB7 /* GameOverView.swift in Sources */,
 				A60EF5E22A44297E006F1369 /* RasraceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,11 +18,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     var lastFrameTime : TimeInterval = 0
     // Time since last frame
     var deltaTime : TimeInterval = 0
+    
+    
     var player: SKSpriteNode = SKSpriteNode(imageNamed: "PlayerSprite")
     var opponent: SKSpriteNode = SKSpriteNode(imageNamed: "Car1Sprite")
     var opponents: [SKSpriteNode] = []
     var road: SKSpriteNode = SKSpriteNode(imageNamed: "road")
     var roads: [SKSpriteNode] = []
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -31,6 +35,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     
     override init(size: CGSize) {
         super.init(size: size)
+    }
+    
+    func goToRestartScene(){
+        self.removeAllActions()
+        self.removeFromParent()
+        self.removeAllChildren()
+        let scene = SKScene(fileNamed: "RestartScene.sks")
+        scene!.scaleMode = SKSceneScaleMode.aspectFill
+        self.view?.presentScene(scene)
+        self.score = 0
     }
     
     override func didMove(to view: SKView) {
@@ -54,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         opponent.physicsBody?.categoryBitMask = 2
         opponent.physicsBody?.contactTestBitMask = 1
         opponent.physicsBody?.collisionBitMask = 0
-
+        
         physicsWorld.contactDelegate = self
     }
     
@@ -71,7 +85,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !isPaused {
+
             for touch in touches {
                 let location = touch.location(in: self)
                 let screenWidth = UIScreen.main.bounds.width
@@ -95,20 +109,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
                 let sequence = SKAction.sequence([move])
                 player.run(sequence)
             }
-        }
-    }
-    
-    func restart() {
-        isGameOver = false
-        isPaused = false
-        score = 0
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print(contact.bodyA)
-        print(contact.bodyB)
-//        isGameOver = true
-//        isPaused = true
+        isGameOver = true
+        goToRestartScene()
     }
     
     func initPlayer(){
@@ -118,10 +124,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     
     func generateOpponentPosition(i: Int = 1) -> CGPoint {
         let sectionWidth = UIScreen.main.bounds.width / 3
-        
         // Choose a random section for the opponent
         let randomSection = Int.random(in: 0...2)
-        
         var opponentXPosition: CGFloat
         
         switch randomSection {
@@ -143,7 +147,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     
     func initOpponent() {
         opponent.position = generateOpponentPosition()
-        // sequencelet timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         let moveDown = SKAction.moveTo(y: 0, duration: 10)
         let remove = SKAction.removeFromParent()
         
@@ -155,33 +158,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         
         let sequence = SKAction.sequence([moveDown, checkPosition, remove])
         opponent.run(sequence)
-        
         addChild(opponent)
     }
     
     func initRoad() {
-        let startFirstY = road.size.height/2
-//        let startSecondY = road.size.height/2 - 200
-        
-        
+//        let startFirstY = road.size.height/2
         road.size = CGSize(width: UIScreen.main.bounds.width, height: road.size.height)
-////        Awal
         road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: 0)
-        
         roads.append(road.copy() as! SKSpriteNode)
-        
         road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: road.size.height)
-        
         roads.append(road.copy() as! SKSpriteNode)
-//        Tujuan
-//        road.position = CGPoint(x: UIScreen.main.bounds.size.width/2, y: -road.size.height/2 + UIScreen.main.bounds.height)
         
-
-//        let moveDown = SKAction.moveTo(y: endY, duration: 4 )
-//        let reset = SKAction.moveTo(y: startSecondY, duration: 0 )
-//        let sequence = SKAction.sequence([moveDown, reset])
-//        let repeatForever = SKAction.repeatForever(sequence)
-//        road.run(repeatForever)
         addChild(roads[0])
         addChild(roads[1])
     }
@@ -207,17 +194,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
     }
     
     func generateCars() {
-        var cars: [String] = ["Car1Sprite", "Car2Sprite", "Car3Sprite"]
-        
-        var enemy: SKSpriteNode = SKSpriteNode(imageNamed: cars[Int.random(in: 0..<(cars.count - 1))])
+        let cars: [String] = ["Car1Sprite", "Car2Sprite", "Car3Sprite"]
+        let enemy: SKSpriteNode = SKSpriteNode(imageNamed: cars[Int.random(in: 0..<(cars.count - 1))])
         
         enemy.position = generateOpponentPosition()
-        // sequence
         let moveDown = SKAction.moveTo(y: 0, duration: 10)
         let remove = SKAction.removeFromParent()
         let checkPosition = SKAction.run {
             if enemy.position.y <= 0 {
                 self.score += 1
+                
+                print("ree")
             }
         }
         let sequence = SKAction.sequence([moveDown, checkPosition, remove])
@@ -235,3 +222,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject{
         generateCars()
     }
 }
+
